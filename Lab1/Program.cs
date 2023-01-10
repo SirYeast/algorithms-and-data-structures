@@ -1,22 +1,22 @@
 ﻿Console.WriteLine("Please enter a number:");
 int n = int.Parse(Console.ReadLine());
 
-Console.WriteLine();
-Console.WriteLine($"Please enter {n} words:");
+Console.WriteLine($"\nPlease enter {n} words:");
 string[] words = new string[n];
 int wordCount = 0;
 
 while (wordCount < n)
 {
+    Console.Write($"{wordCount + 1}) ");
     string? word = Console.ReadLine();
 
     if (string.IsNullOrEmpty(word))
     {
-        Console.WriteLine("No word entered, please enter a word:");
+        Console.WriteLine("\nNo word entered, please enter a word:");
     }
     else if (word.Contains(' '))
     {
-        Console.WriteLine("The word contains a space, please enter another word:");
+        Console.WriteLine("\nThat word contains a space, please enter another word:");
     }
     else
     {
@@ -25,9 +25,7 @@ while (wordCount < n)
     }
 }
 
-Console.WriteLine();
-Console.WriteLine("Please enter a character:");
-
+Console.WriteLine("\nPlease enter a letter:");
 char character;
 
 while (true)
@@ -36,7 +34,7 @@ while (true)
 
     if (!char.IsLetter(character))
     {
-        Console.WriteLine("\nPlease enter a letter:");
+        Console.WriteLine("\n\nPlease enter a letter (no numbers or symbols):");
     }
     else
     {
@@ -60,8 +58,7 @@ foreach (string word in words)
     }
 }
 
-Console.WriteLine();
-Console.Write($"The letter '{character}' appears {charOccurences} times in the array.");
+Console.Write($"\n\nThe letter '{character}' appears {charOccurences} times in the array.");
 
 if ((double)charOccurences / charCount > 0.25)
 {
